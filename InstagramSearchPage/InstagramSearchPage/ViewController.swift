@@ -9,8 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController, UICollectionViewDataSource, GridLayoutDelegate {
-    var arrImages = [#imageLiteral(resourceName: "image1"),#imageLiteral(resourceName: "image2"),#imageLiteral(resourceName: "image3"),#imageLiteral(resourceName: "image4"),#imageLiteral(resourceName: "image5"),#imageLiteral(resourceName: "image6"),#imageLiteral(resourceName: "image7"),#imageLiteral(resourceName: "image8"),#imageLiteral(resourceName: "image9"),#imageLiteral(resourceName: "image10"),#imageLiteral(resourceName: "image11"),#imageLiteral(resourceName: "image12"),#imageLiteral(resourceName: "image13"),#imageLiteral(resourceName: "image14"),#imageLiteral(resourceName: "image15"),#imageLiteral(resourceName: "image16"),#imageLiteral(resourceName: "image17"),#imageLiteral(resourceName: "image18"),#imageLiteral(resourceName: "image19"),#imageLiteral(resourceName: "image1")]
-    
+
+    var arrImages = [UIImage]()
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet var gridLayout: GridLayout!
@@ -18,9 +18,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, GridLayoutDe
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        arrImages.append(contentsOf: arrImages)
-        arrImages.append(contentsOf: arrImages)
-        arrImages.append(contentsOf: arrImages)
+//Preparing array Of images
+        arrImages = Array(repeatElement(#imageLiteral(resourceName: "image1"), count: 99))
 
         arrInstaBigCells.append(1)
         var tempStorage = false
